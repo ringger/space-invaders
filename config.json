@@ -1,0 +1,129 @@
+{
+  "display": {
+    "min_width": 40,
+    "min_height": 20,
+    "colors": {
+      "player": 1,
+      "invaders_red": 2,
+      "bullets_yellow": 3,
+      "ui_white": 4,
+      "ufo_magenta": 5,
+      "invaders_cyan": 6,
+      "invaders_blue": 7
+    }
+  },
+  "player": {
+    "lives": 3,
+    "respawn_delay": 60,
+    "max_bullets": 5,
+    "movement_margin_left": 1,
+    "movement_margin_right": 2,
+    "death_explosion_radius": 2,
+    "sprite": [
+      " ▲ ",
+      "▼█▼"
+    ],
+    "width": 3,
+    "height": 2,
+    "starting_y_offset": 4
+  },
+  "invaders": {
+    "formation": {
+      "rows": 5,
+      "cols": 8,
+      "sprite_width": 7,
+      "sprite_height": 3,
+      "start_y": 5,
+      "row_spacing": 4,
+      "col_spacing": 1
+    },
+    "movement": {
+      "initial_direction": 1,
+      "initial_move_speed": 15,
+      "min_move_speed": 3,
+      "speed_reduction_per_drop": 2,
+      "max_step_size": 3,
+      "step_size_threshold": 10
+    },
+    "weapons": {
+      "bullet_chance": 0.002,
+      "bomb_chance": 0.0005
+    },
+    "animation": {
+      "base_animation_speed": 30,
+      "color_cycle_speed_multiplier": 2,
+      "color_palette": [2, 3, 4, 6, 7],
+      "color_timer_min": 0,
+      "color_timer_max": 60,
+      "color_speed_min": 15,
+      "color_speed_max": 45,
+      "death_explosion_radius": 1
+    }
+  },
+  "ufo": {
+    "spawn_time_min": 1800,
+    "spawn_time_max": 3600,
+    "points": [50, 100, 150, 300],
+    "y_position": 3,
+    "offscreen_buffer_left": 10,
+    "offscreen_buffer_right": 5,
+    "sprite": [
+      " ▄▀█▀▄ ",
+      "▄█▄▄▄█▄",
+      "▀▄▄▄▄▄▀"
+    ],
+    "width": 7,
+    "height": 3
+  },
+  "barriers": {
+    "count": 4,
+    "width": 7,
+    "height": 5,
+    "y_offset": 12,
+    "spacing": 8,
+    "damage_chance_direct": 0.8,
+    "damage_chance_adjacent": 0.4,
+    "default_shape": [
+      [true, true, true, true, true, true, true],
+      [true, true, true, true, true, true, true],
+      [true, true, true, true, true, true, true],
+      [true, true, false, false, false, true, true],
+      [true, false, false, false, false, false, true]
+    ]
+  },
+  "weapons": {
+    "bullets": {
+      "player_char": "│",
+      "invader_char": "│"
+    },
+    "bombs": {
+      "char": "●",
+      "explosion_radius_impact": 3,
+      "explosion_radius_shot": 2,
+      "explosion_duration": 10,
+      "explosion_chars": ["*", "+", "."]
+    }
+  },
+  "effects": {
+    "ripples": {
+      "spawn_chance": 0.005,
+      "speed": 0.5,
+      "max_radius": 8,
+      "edge_threshold": 1.0
+    },
+    "explosions": {
+      "frame_thresholds": [7, 4, 0]
+    }
+  },
+  "gameplay": {
+    "game_speed": 0.05,
+    "level_progression_rows_per_level": 2,
+    "screen_resize_player_y_offset": 4,
+    "invader_speed_calculation_divider": 5,
+    "score_per_invader": {
+      "top_rows": 30,
+      "middle_rows": 20,
+      "bottom_rows": 10
+    }
+  }
+}
