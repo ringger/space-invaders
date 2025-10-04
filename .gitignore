@@ -1,0 +1,15 @@
+# Virtual Environment
+venv/
+env/
+*.pyc
+__pycache__/
+
+# Game data
+highscore.txt
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
