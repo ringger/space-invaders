@@ -1,6 +1,20 @@
 # Terminal Space Invaders
 
-A classic Space Invaders game implemented in Python using the curses library.
+A feature-rich Space Invaders game for the terminal, built in Python using the curses library. Includes animated sprites, destructible barriers, a UFO bonus ship, alien bombs with blast radius, and a fully configurable gameplay engine.
+
+## Features
+
+- **Colorful ASCII art** with animated wing-flapping invaders and color cycling effects
+- **5 rows x 8 columns** invader formation with three point tiers (30/20/10 pts)
+- **Destructible barriers** that degrade realistically on impact
+- **UFO bonus ship** that appears randomly for 50-300 bonus points
+- **Alien bombs** with blast radius and explosion animations
+- **Ripple effects** and visual feedback throughout
+- **Level progression** with increasing difficulty (invaders start lower, move faster)
+- **Lives system** with respawn delay
+- **Persistent high score** tracking
+- **Terminal resize handling** — adapts on the fly
+- **Fully configurable** via `config.json` (speeds, sprites, colors, formation size, and more)
 
 ## Requirements
 
@@ -10,36 +24,40 @@ A classic Space Invaders game implemented in Python using the curses library.
 
 ## Installation
 
-1. Create and activate virtual environment:
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
+Clone the repo and run — no dependencies beyond the Python standard library:
 
-2. Run the game:
 ```bash
-python space_invaders.py
+git clone https://github.com/ringger/space-invaders.git
+cd space-invaders
+python3 space_invaders.py
 ```
 
 ## Controls
 
-- **A** or **←**: Move left
-- **D** or **→**: Move right  
-- **SPACE**: Shoot
-- **Q**: Quit game
+| Key | Action |
+|-----|--------|
+| **A** / **←** | Move left |
+| **D** / **→** | Move right |
+| **Space** | Shoot |
+| **Q** | Quit |
 
-## Gameplay
+## Configuration
 
-- Destroy all invaders to advance to the next level
-- Avoid getting hit by invader bullets
-- Score points for each invader destroyed (10 points each)
+All gameplay parameters are exposed in `config.json`:
 
-## Features
+| Section | What you can tweak |
+|---|---|
+| `display` | Minimum terminal size, color assignments |
+| `player` | Lives, max bullets, respawn delay, sprite |
+| `invaders.formation` | Rows, columns, spacing |
+| `invaders.movement` | Speed, acceleration, step size |
+| `invaders.weapons` | Bullet and bomb probability |
+| `ufo` | Spawn timing, point values, sprite |
+| `barriers` | Count, size, damage probability |
+| `weapons` | Bullet/bomb characters, explosion radius |
+| `effects` | Ripple and explosion settings |
+| `gameplay` | Game speed, scoring per invader tier |
 
-- Colorful ASCII graphics
-- Real-time gameplay
-- Score tracking
-- Level progression
-- Collision detection
+## License
 
-Enjoy the game!
+MIT License. See [LICENSE](LICENSE) for details.
